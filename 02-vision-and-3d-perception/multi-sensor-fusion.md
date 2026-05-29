@@ -52,7 +52,3 @@ Early fusion 在原始数据附近融合，信息交互充分但标定和对齐�
 - Liang et al., `Deep Continuous Fusion for Multi-Sensor 3D Object Detection`, ECCV 2018。
 - Liu et al., `BEVFusion: Multi-Task Multi-Sensor Fusion with Unified Bird's-Eye View Representation`, arXiv:2205.13542。
 - Liang et al., `BEVFusion: A Simple and Robust LiDAR-Camera Fusion Framework`, arXiv:2205.13790。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/多传感器融合/多传感器融合总览.md`

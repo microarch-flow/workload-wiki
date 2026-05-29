@@ -44,7 +44,3 @@ LiDAR workload 的核心是稀疏 3D 到规整表示的转换；它在几何表�
 - Qi et al., `PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation`, CVPR 2017, arXiv:1612.00593。
 - Yan et al., `SECOND: Sparsely Embedded Convolutional Detection`, Sensors 2018, arXiv:1806.05578。
 - Lang et al., `PointPillars: Fast Encoders for Object Detection from Point Clouds`, CVPR 2019, arXiv:1812.05784。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/激光雷达点云处理/激光雷达点云处理总览.md`

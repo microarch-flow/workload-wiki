@@ -53,7 +53,3 @@ Robot World Model 让机器人在执行前预测动作后果；它把 workload �
 - Hafner et al., `Mastering Diverse Domains through World Models`, DreamerV3, arXiv:2301.04104，https://arxiv.org/abs/2301.04104，成熟度：成熟研究路线，查证日期：2026-05-29。
 - Chi et al., `Diffusion Policy`, RSS 2023 / arXiv:2303.04137，https://arxiv.org/abs/2303.04137，成熟度：机器人动作生成成熟研究，查证日期：2026-05-29。
 - Zheng et al., `FLARE: Robot Learning with Implicit World Modeling`, CoRL 2025 / arXiv:2505.15659，https://arxiv.org/abs/2505.15659，成熟度：2025 前沿研究方向，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/机器人World_Model.md`

@@ -78,7 +78,3 @@ CNN backbone 是规整、高复用、量化成熟的视觉前端；它通常不�
 - He et al., `Deep Residual Learning for Image Recognition`, CVPR 2016, arXiv:1512.03385。
 - Howard et al., `MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications`, arXiv:1704.04861。
 - Tan and Le, `EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks`, ICML 2019, arXiv:1905.11946。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Backbone/Backbone总览.md`

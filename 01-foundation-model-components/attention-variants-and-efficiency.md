@@ -82,7 +82,3 @@ Attention efficiency 的核心不是“把 attention 变小”，而是根据任
 - Dao et al., `FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness`, NeurIPS 2022, arXiv:2205.14135。
 - Liu et al., `Swin Transformer: Hierarchical Vision Transformer using Shifted Windows`, ICCV 2021, arXiv:2103.14030。
 - Zhu et al., `Deformable DETR: Deformable Transformers for End-to-End Object Detection`, ICLR 2021, arXiv:2010.04159。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Attention与Transformer/Attention与Transformer总览.md`

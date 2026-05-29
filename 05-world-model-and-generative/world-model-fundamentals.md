@@ -39,7 +39,7 @@ World Model 的核心是 dynamics。它要回答“如果现在采取这个 acti
 
 - 成熟：Dreamer 系列 latent dynamics、model-based RL、短时 horizon 的仿真预测。
 - 发展中：自动驾驶 BEV/occupancy world model、机器人 implicit world model、action-conditioned video generation。
-- 前沿：Cosmos、Genie 2、DriveWAM、V-JEPA 2 等把 world foundation model 推向物理 AI、交互仿真和 embodied planning，但离直接安全闭环部署仍有距离。
+- 前沿：Cosmos、Genie 2、GAIA-2、V-JEPA 2 等把 world foundation model 推向物理 AI、交互仿真和 embodied planning，但离直接安全闭环部署仍有距离。
 
 ## 一句话理解
 
@@ -61,7 +61,3 @@ World Model 是“可预测 action 后果的环境模型”；它把 workload �
 - Hafner et al., `Mastering Diverse Domains through World Models`, DreamerV3, arXiv:2301.04104，https://arxiv.org/abs/2301.04104，成熟度：成熟研究路线，查证日期：2026-05-29。
 - LeCun, `A Path Towards Autonomous Machine Intelligence`, 2022，https://openreview.net/forum?id=BZ5a1r-kVsf，成熟度：概念框架，查证日期：2026-05-29。
 - NVIDIA, `Cosmos World Foundation Model Platform for Physical AI`, 2025，https://www.nvidia.com/en-us/ai/cosmos/，成熟度：2025 产业平台，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/World_Model总览.md`

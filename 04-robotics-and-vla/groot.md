@@ -53,7 +53,3 @@ GR00T 把 VLA 从机械臂操作推向 humanoid foundation model；它把 worklo
 - NVIDIA Research, `GR00T N1` project page, https://research.nvidia.com/labs/lpr/publication/gr00tn1_2025/，成熟度：官方研究资料，查证日期：2026-05-29。
 - NVIDIA Newsroom, `NVIDIA Announces Isaac GR00T N1`, 2025-03-18，https://nvidianews.nvidia.com/news/nvidia-isaac-gr00t-n1-open-humanoid-robot-foundation-model-simulation-frameworks，成熟度：官方产品/生态发布，查证日期：2026-05-29。
 - NVIDIA Research, `GR00T N1.5`, https://research.nvidia.com/labs/gear/gr00t-n1_5/，成熟度：2025-2026 演进方向，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/GR00T模型拆解.md`

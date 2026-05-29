@@ -55,7 +55,3 @@ VLA 是把机器人动作接入多模态大模型的路线；它让语义泛化�
 - Kim et al., `OpenVLA: An Open-Source Vision-Language-Action Model`, arXiv:2406.09246，https://arxiv.org/abs/2406.09246，成熟度：开源研究模型，查证日期：2026-05-29。
 - `pi0.5: a Vision-Language-Action Model with Open-World Generalization`, arXiv:2504.16054，https://arxiv.org/abs/2504.16054，成熟度：2025 前沿研究，查证日期：2026-05-29。
 - NVIDIA, `GR00T N1: An Open Foundation Model for Generalist Humanoid Robots`, arXiv:2503.14734，https://arxiv.org/abs/2503.14734，成熟度：2025 产业研究原型，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/VLA基础.md`

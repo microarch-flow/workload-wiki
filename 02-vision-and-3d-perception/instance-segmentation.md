@@ -45,7 +45,3 @@ Mask R-CNN 常见做法是对每个 proposal 提取固定大小 ROI feature，�
 
 - He et al., `Mask R-CNN`, ICCV 2017, arXiv:1703.06870。
 - Cheng et al., `Masked-attention Mask Transformer for Universal Image Segmentation`, CVPR 2022, arXiv:2112.01527。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/实例分割/实例分割总览.md`

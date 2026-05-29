@@ -67,7 +67,3 @@ BEV 是自动驾驶从感知走向规划的统一坐标系；它的 workload 核
 - Li et al., `BEVDepth: Acquisition of Reliable Depth for Multi-view 3D Object Detection`, arXiv:2206.10092。
 - Liu et al., `PETR: Position Embedding Transformation for Multi-View 3D Object Detection`, ECCV 2022, arXiv:2203.05625。
 - Liu et al., `BEVFusion: Multi-Task Multi-Sensor Fusion with Unified Bird's-Eye View Representation`, arXiv:2205.13542。
-
-## 旧版素材
-
-- 新增页面，旧版 02 中没有独立 BEV 文档；素材来自旧版多传感器融合、Occupancy 和 03 自动驾驶 BEV 相关章节。

@@ -59,7 +59,3 @@
 - Zitkovich et al., `RT-2`, CoRL 2023 / arXiv:2307.15818，https://arxiv.org/abs/2307.15818，成熟度：机器人 VLA 代表，查证日期：2026-05-29。
 - Kim et al., `OpenVLA`, arXiv:2406.09246，https://arxiv.org/abs/2406.09246，成熟度：开源机器人 VLA，查证日期：2026-05-29。
 - NVIDIA, `GR00T N1`, arXiv:2503.14734，https://arxiv.org/abs/2503.14734，成熟度：humanoid VLA 前沿，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/机器人与自动驾驶的共性_差异.md`

@@ -55,7 +55,3 @@ OpenVLA 是机器人 VLA 的开源锚点：它证明开源 VLM 可以接机器�
 - OpenVLA GitHub, https://github.com/openvla/openvla，成熟度：开源实现，查证日期：2026-05-29。
 - `FAST: Efficient Action Tokenization for Vision-Language-Action Models`, arXiv:2501.09747，https://arxiv.org/abs/2501.09747，成熟度：2025 前沿 tokenizer，查证日期：2026-05-29。
 - `SmolVLA: Efficient Vision-Language-Action Model trained on Lerobot Community Data`, arXiv:2506.01844，https://arxiv.org/abs/2506.01844，成熟度：2025 高效 VLA 研究，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/OpenVLA.md`

@@ -96,7 +96,3 @@ Attention 把信息读取变成内容相关的 token 交互，Transformer 把这
 
 - Vaswani et al., `Attention Is All You Need`, NeurIPS 2017, arXiv:1706.03762。
 - Dosovitskiy et al., `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`, ICLR 2021, arXiv:2010.11929。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Attention与Transformer/Attention与Transformer总览.md`

@@ -46,7 +46,3 @@ Encoder 压缩空间分辨率并增强语义，decoder 通过 upsample、skip co
 - Long et al., `Fully Convolutional Networks for Semantic Segmentation`, CVPR 2015。
 - Chen et al., `DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs`, TPAMI 2018, arXiv:1606.00915。
 - Cheng et al., `Masked-attention Mask Transformer for Universal Image Segmentation`, CVPR 2022, arXiv:2112.01527。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/语义分割/语义分割总览.md`

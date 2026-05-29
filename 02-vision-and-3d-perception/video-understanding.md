@@ -54,7 +54,3 @@ Frame + temporal aggregation 易于复用 image backbone，但空间和时间分
 - Arnab et al., `ViViT: A Video Vision Transformer`, ICCV 2021, arXiv:2103.15691。
 - Tong et al., `VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training`, NeurIPS 2022, arXiv:2203.12602。
 - Gu and Dao, `Mamba: Linear-Time Sequence Modeling with Selective State Spaces`, arXiv:2312.00752。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/视频理解/视频理解总览.md`

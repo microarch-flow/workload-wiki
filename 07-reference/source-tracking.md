@@ -22,7 +22,7 @@
 | 方向 | 代表项 | 当前口径 |
 | --- | --- | --- |
 | AD VLM/VLA | DriveLM、DriveVLM、EMMA、AutoVLA | 研究和原型阶段，不能写成量产闭环 |
-| AD World Model | GAIA-1、DriveWorld、DriveWAM、Waymo World Model | 云端仿真和前沿研究为主 |
+| AD World Model | GAIA-1、GAIA-2、Drive-WM、Vista | 云端仿真和前沿研究为主 |
 | Robotics VLA | RT-2、OpenVLA、π0、π0.5、GR00T N1、SmolVLA | 从 VLA baseline 走向 action tokenizer 和 embodied generalist |
 | Action Tokenizer | FAST、SmolVLA、RT-2 action tokens | 2025 前沿，重点是 token 长度、精度和 latency |
 | Robot World Model | Diffusion Policy、FLARE | 发展中，实时闭环仍前沿 |
@@ -39,8 +39,8 @@
 | AutoVLA | 2025 | arXiv:2506.13757 | AD VLA 前沿研究 | 2026-05-29 |
 | GAIA-1 | 2023 | arXiv:2309.17080 | AD video world model 代表 | 2026-05-29 |
 | DriveWorld | 2024 | arXiv:2405.04390 / CVPR 2024 | 研究成熟 | 2026-05-29 |
-| DriveWAM | 2026 | arXiv:2605.28544 | 2026 前沿研究 | 2026-05-29 |
-| Waymo World Model | 2026 | Waymo official blog, 2026-02-06 | 产业仿真前沿 | 2026-05-29 |
+| Drive-WM | 2023/2024 | arXiv:2311.17918 / CVPR 2024 | 多视角驾驶 world model 研究成熟 | 2026-05-29 |
+| GAIA-2 | 2025 | arXiv:2503.20523 / Wayve | latent diffusion 多视角驾驶 world model | 2026-05-29 |
 | RT-2 | 2023 | arXiv:2307.15818 / CoRL 2023 | VLA 范式代表 | 2026-05-29 |
 | OpenVLA | 2024 | arXiv:2406.09246 | 开源 VLA baseline | 2026-05-29 |
 | π0 | 2024 | arXiv:2410.24164 | VLA flow/action 前沿研究 | 2026-05-29 |

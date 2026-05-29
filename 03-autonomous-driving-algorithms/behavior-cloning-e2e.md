@@ -72,7 +72,3 @@ Behavior Cloning E2E 把自动驾驶从“手写模块接口”推向“从驾�
 - Bansal et al., `ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst`, RSS 2019 / arXiv:1812.03079，成熟度：经典闭环 imitation baseline，查证日期：2026-05-29。
 - Wu et al., `Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline`, NeurIPS 2022 / arXiv:2206.08129，成熟度：研究成熟，查证日期：2026-05-29。
 - Chen et al., `Learning from All Vehicles`, CVPR 2022，成熟度：大规模数据学习方向，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/03_自动驾驶算法路线/Behavior_Cloning_E2E.md`

@@ -79,7 +79,3 @@ ViT backbone 把视觉 workload 从规整 feature map 卷积转成 token 序列�
 
 - Dosovitskiy et al., `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`, ICLR 2021, arXiv:2010.11929。
 - Liu et al., `Swin Transformer: Hierarchical Vision Transformer using Shifted Windows`, ICCV 2021, arXiv:2103.14030。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Backbone/Backbone总览.md`

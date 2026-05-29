@@ -28,7 +28,7 @@ World Model 可以服务两种规划方式：
 
 ## 2025-2026 观察
 
-2023-2024 的 GAIA-1、DriveWorld 等工作把生成式世界建模引入自动驾驶。到 2025-2026，趋势开始从“生成传感器观测”转向“可控、可评估、可与 planning/action 结合”的世界模型，例如 DriveWAM 和厂商公开的 world model simulation 路线。
+2023-2024 的 GAIA-1、Drive-WM、DriveWorld 等工作把生成式世界建模引入自动驾驶。到 2025-2026，趋势开始从“生成传感器观测”转向“可控、可评估、可与 planning/action 结合”的世界模型，例如 Wayve 的 GAIA-2（latent diffusion、多视角、结构化条件）和厂商公开的 world model simulation 路线。
 
 成熟度上，World Model 已经适合做数据生成、场景理解预训练和仿真增强；直接承担车端闭环规划核心仍属于前沿。
 
@@ -57,9 +57,6 @@ World Model 可以服务两种规划方式：
 
 - Hu et al., `GAIA-1: A Generative World Model for Autonomous Driving`, arXiv:2309.17080，https://arxiv.org/abs/2309.17080，成熟度：生成式 AD world model 早期代表，查证日期：2026-05-29。
 - Min et al., `DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving`, CVPR 2024 / arXiv:2405.04390，https://arxiv.org/abs/2405.04390，成熟度：研究成熟，查证日期：2026-05-29。
-- `DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving`, arXiv:2605.28544，https://arxiv.org/abs/2605.28544，成熟度：2026 前沿研究，查证日期：2026-05-29。
+- Wang et al., `Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving (Drive-WM)`, CVPR 2024 / arXiv:2311.17918，https://arxiv.org/abs/2311.17918，成熟度：研究成熟，可与 E2E planning 结合，查证日期：2026-05-29。
+- Russell et al., `GAIA-2: A Controllable Multi-View Generative World Model for Autonomous Driving (Wayve)`, arXiv:2503.20523，https://arxiv.org/abs/2503.20523，成熟度：2025 产业研究，latent diffusion 多视角世界模型，查证日期：2026-05-29。
 - Waymo, `The Waymo World Model: A New Frontier For Autonomous Driving Simulation`, 2026-02-06，https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation，成熟度：产业前沿公开方向，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/03_自动驾驶算法路线/World_Model_for_AD.md`

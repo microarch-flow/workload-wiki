@@ -51,7 +51,3 @@ Action Tokenizer 把连续机器人控制变成模型可生成的符号或 laten
 - Zitkovich et al., `RT-2`, CoRL 2023 / arXiv:2307.15818，动作作为 text-like tokens，https://arxiv.org/abs/2307.15818，成熟度：VLA action token 早期代表，查证日期：2026-05-29。
 - `FAST: Efficient Action Tokenization for Vision-Language-Action Models`, arXiv:2501.09747，https://arxiv.org/abs/2501.09747，成熟度：2025 前沿研究，查证日期：2026-05-29。
 - `SmolVLA: Efficient Vision-Language-Action Model trained on Lerobot Community Data`, arXiv:2506.01844，https://arxiv.org/abs/2506.01844，成熟度：2025 高效 VLA 研究，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/Action_Tokenizer.md`

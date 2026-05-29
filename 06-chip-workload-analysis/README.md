@@ -58,7 +58,3 @@ algorithm dataflow
 - Capability：Conv/GEMM/Attention、scatter-gather、sparse metadata、quantization、stateful decode、online softmax。
 
 每篇 workload 文档都要把算法参数写成可建模参数，例如 `sequence length`、`BEV grid`、`voxel resolution`、`camera count`、`candidate count`、`rollout horizon`、`action chunk length`。这些参数才是架构探索时真正扫描的变量。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/06_芯片架构Workload分析/README.md`

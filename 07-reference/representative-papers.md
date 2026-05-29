@@ -34,7 +34,7 @@
 | Planning-oriented E2E | `UniAD`, arXiv:2212.10156；`VAD`, arXiv:2303.12077 | 研究成熟 |
 | Behavior Cloning | `PilotNet`, arXiv:1604.07316；`ChauffeurNet`, arXiv:1812.03079；`TCP`, arXiv:2206.08129 | 成熟 baseline |
 | AD VLM/VLA | `DriveLM`, arXiv:2312.14150；`DriveVLM`, arXiv:2402.12289；`EMMA`, arXiv:2410.23262；`AutoVLA`, arXiv:2506.13757 | 2024-2025 前沿 |
-| AD World Model | `GAIA-1`, arXiv:2309.17080；`DriveWorld`, arXiv:2405.04390；`DriveWAM`, arXiv:2605.28544；Waymo World Model, 2026 | 前沿 |
+| AD World Model | `GAIA-1`, arXiv:2309.17080；`GAIA-2`, arXiv:2503.20523；`Drive-WM`, arXiv:2311.17918；`Vista`, arXiv:2405.17398 | 前沿 |
 | Benchmark / simulation | `nuPlan`, arXiv:2106.11810；`NAVSIM`, arXiv:2406.15349；`ReSim`, arXiv:2506.09981 | 发展中 |
 
 ## Robotics and VLA
@@ -53,7 +53,7 @@
 | --- | --- | --- |
 | Latent World Model | `World Models`, 2018；`DreamerV3`, arXiv:2301.04104 | 成熟研究路线 |
 | Video World Model | OpenAI Sora technical note, 2024；Google DeepMind `Genie 2`, 2024；NVIDIA `Cosmos`, 2025 | 前沿系统 |
-| BEV / Occupancy World Model | `BEVWorld`, arXiv:2407.05679；`OccWorld`, arXiv:2311.16038；`GEM`, arXiv:2605.07326 | 前沿 |
+| BEV / Occupancy World Model | `BEVWorld`, arXiv:2407.05679；`OccWorld`, arXiv:2311.16038 | 前沿 |
 | Edge-cloud World Model | Waymo World Model, 2026；NVIDIA Cosmos, 2025 | 产业前沿 |
 
 ## Workload Characterization

@@ -50,7 +50,7 @@ Transformer 擅长显式 query-based 读取、多模态对齐和任意 token 交
 
 因此更现实的趋势不是二选一，而是混合：视觉或语言模块仍用 attention 做关键交互，长历史视频、BEV memory、trajectory history、latent dynamics 可能用 SSM 压缩。
 
-在自动驾驶和机器人中，SSM 值得关注的场景包括 video history encoder、temporal BEV memory、planning history summarizer、robot proprioception/action history、World Model latent dynamics。2025-2026 的论文已经开始把 Mamba/SSM 用到 trajectory prediction、state-space world model 和 LiDAR world model 中，例如 Trajectory Mamba、State-Space World Models、Deformable Mamba LiDAR World Model；这些多数仍是论文阶段，应避免写成已量产方案。
+在自动驾驶和机器人中，SSM 值得关注的场景包括 video history encoder、temporal BEV memory、planning history summarizer、robot proprioception/action history、World Model latent dynamics。2025 年前后的论文已经开始把 Mamba/SSM 用到 trajectory prediction 等长序列任务，例如 Trajectory Mamba（CVPR 2025，把 encoder-decoder 的 self-attention 改成 selective SSM，做到线性复杂度、FLOPs 降约 4 倍）；这类工作多数仍是论文阶段，应避免写成已量产方案。
 
 典型量级上，SSM 的吸引力来自长序列：当 history length 从几十帧扩展到几百或几千 token 时，full attention 的 score matrix 按 `N^2` 增长，而 SSM 更接近按序列长度线性推进。但如果 state dimension 很大，state 读写和 scan kernel 仍会成为硬件瓶颈。
 
@@ -84,10 +84,4 @@ Mamba/SSM 用状态递推压缩长历史，把 workload 从 full attention 的 `
 
 - Gu and Dao, `Mamba: Linear-Time Sequence Modeling with Selective State Spaces`, arXiv:2312.00752。
 - Dao and Gu, `Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality`, arXiv:2405.21060。
-- `Trajectory Mamba: Efficient Attention-Mamba Forecasting Model Based on Selective SSM`, 2025, arXiv:2503.10898。
-- `Accelerating Model-Based Reinforcement Learning with State-Space World Models`, 2025, arXiv:2502.20168。
-- `GEM: Generating LiDAR World Model via Deformable Mamba`, 2026, arXiv:2605.07326。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Mamba与SSM/Mamba与SSM总览.md`
+- Huang et al., `Trajectory Mamba: Efficient Attention-Mamba Forecasting Model Based on Selective SSM`, CVPR 2025 / arXiv:2503.10898。成熟度：研究阶段，Mamba 用于自动驾驶轨迹预测的代表。

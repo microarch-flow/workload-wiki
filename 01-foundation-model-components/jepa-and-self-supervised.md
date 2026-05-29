@@ -75,7 +75,3 @@ JEPA 把自监督学习从“对比或重建输入”推进到“预测高层表
 - Bardes et al., `Revisiting Feature Prediction for Learning Visual Representations from Video`, 2024, arXiv:2404.08471。
 - `V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning`, 2025, arXiv:2506.09985。
 - `V-JEPA 2.1: Dense Video and Image Features`, 2026, arXiv:2603.14482。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/JEPA与自监督表征/JEPA与自监督表征总览.md`

@@ -43,7 +43,3 @@ classic robotics pipeline
 ## 阅读方式
 
 先读 VLA 基础和 Action Tokenizer，建立“动作如何进入大模型”的概念；再读 RT、OpenVLA、GR00T，理解代表系统的架构演进；最后读 Robot World Model 和机器人/自动驾驶对比，把机器人 workload 放回统一芯片需求视角。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/机器人与VLA总览.md`

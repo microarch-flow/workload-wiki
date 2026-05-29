@@ -39,7 +39,3 @@ world state representation
 | Latent World Model | latent dynamics、policy rollout、belief state | [World Model Workload](../06-chip-workload-analysis/world-model-workload.md) |
 | BEV / Occupancy World Model | spatial grid、future occupancy、planning cost | [BEV Workload](../06-chip-workload-analysis/bev-workload.md), [Occupancy Workload](../06-chip-workload-analysis/occupancy-workload.md) |
 | Edge-cloud Collaborative | cloud generation、edge inference、data loop | [Cloud Inference and Simulation Chip](../06-chip-workload-analysis/cloud-inference-and-simulation-chip.md) |
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/README.md`

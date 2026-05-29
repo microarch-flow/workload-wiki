@@ -48,8 +48,4 @@ BEV World Model 是自动驾驶 planning 友好的未来预测表示；它用空
 - Li et al., `BEVFormer`, ECCV 2022 / arXiv:2203.17270，https://arxiv.org/abs/2203.17270，成熟度：BEV 表征基础，查证日期：2026-05-29。
 - Zheng et al., `BEVWorld: A Multimodal World Model for Autonomous Driving via Unified BEV Latent Space`, arXiv:2407.05679，https://arxiv.org/abs/2407.05679，成熟度：研究原型，查证日期：2026-05-29。
 - Min et al., `DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving`, CVPR 2024 / arXiv:2405.04390，https://arxiv.org/abs/2405.04390，成熟度：研究成熟，查证日期：2026-05-29。
-- `DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving`, arXiv:2605.28544，https://arxiv.org/abs/2605.28544，成熟度：2026 前沿研究，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/BEV_World_Model.md`
+- Wang et al., `Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving (Drive-WM)`, CVPR 2024 / arXiv:2311.17918，https://arxiv.org/abs/2311.17918，成熟度：研究成熟，多视角驾驶世界模型，查证日期：2026-05-29。

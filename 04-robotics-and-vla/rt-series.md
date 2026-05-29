@@ -57,7 +57,3 @@ RT 系列把机器人从单任务模仿学习推进到 VLA：先规模化机器�
 - Zitkovich et al., `RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control`, CoRL 2023 / arXiv:2307.15818，https://arxiv.org/abs/2307.15818，成熟度：VLA 代表，查证日期：2026-05-29。
 - Padalkar et al., `Open X-Embodiment: Robotic Learning Datasets and RT-X Models`, ICRA 2024 / arXiv:2310.08864，https://arxiv.org/abs/2310.08864，成熟度：跨 embodiment 数据路线，查证日期：2026-05-29。
 - Belkhale et al., `RT-H: Action Hierarchies Using Language`, RSS 2024 / arXiv:2403.01823，https://arxiv.org/abs/2403.01823，成熟度：动作层次研究，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/04_机器人与VLA/RT系列.md`

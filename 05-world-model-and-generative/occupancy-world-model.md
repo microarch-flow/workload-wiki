@@ -46,8 +46,4 @@ Occupancy World Model 用 3D 空间占用预测未来风险；它最接近安全
 - Wei et al., `SurroundOcc: Multi-Camera 3D Occupancy Prediction for Autonomous Driving`, ICCV 2023 / arXiv:2303.09551，https://arxiv.org/abs/2303.09551，成熟度：occupancy 基础研究，查证日期：2026-05-29。
 - Zheng et al., `OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving`, arXiv:2311.16038，https://arxiv.org/abs/2311.16038，成熟度：occupancy world model 代表，查证日期：2026-05-29。
 - `OpenOccupancy: A Large Scale Benchmark for Surrounding Semantic Occupancy Perception`, ICCV 2023 / arXiv:2303.03991，https://arxiv.org/abs/2303.03991，成熟度：常用数据/评测资源，查证日期：2026-05-29。
-- `GEM: A Generalizable Ego-Vision Multimodal World Model for Fine-Grained Ego-Motion, Object Dynamics, and Scene Composition Control`, arXiv:2605.07326，https://arxiv.org/abs/2605.07326，成熟度：2026 前沿多模态 world model，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/Occupancy_World_Model.md`
+- Hassan et al., `GEM: A Generalizable Ego-Vision Multimodal World Model for Fine-Grained Ego-Motion, Object Dynamics, and Scene Composition Control`, CVPR 2025 / arXiv:2412.11198，https://arxiv.org/abs/2412.11198，成熟度：研究阶段，多模态（RGB+depth）ego-vision world model，查证日期：2026-05-29。

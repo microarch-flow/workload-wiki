@@ -69,7 +69,3 @@ VLM/VLA 把自动驾驶从封闭类别识别推向开放语义和 action token �
 - Tian et al., `DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models`, CoRL 2024 / arXiv:2402.12289，https://arxiv.org/abs/2402.12289，成熟度：研究原型，查证日期：2026-05-29。
 - Waymo Research, `EMMA: End-to-End Multimodal Model for Autonomous Driving`, arXiv:2410.23262，https://arxiv.org/abs/2410.23262，成熟度：前沿研究原型，查证日期：2026-05-29。
 - `AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning`, arXiv:2506.13757，https://arxiv.org/abs/2506.13757，成熟度：2025 前沿研究，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/03_自动驾驶算法路线/VLM_VLA_for_AD.md`

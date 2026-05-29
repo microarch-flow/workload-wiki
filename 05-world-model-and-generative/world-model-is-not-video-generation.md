@@ -49,7 +49,3 @@
 - Google DeepMind, `Genie 2: A large-scale foundation world model`, 2024，https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/，成熟度：前沿 world model demo，查证日期：2026-05-29。
 - NVIDIA, `Cosmos World Foundation Models`, 2025，https://www.nvidia.com/en-us/ai/cosmos/，成熟度：2025 产业平台，查证日期：2026-05-29。
 - Waymo, `The Waymo World Model: A New Frontier For Autonomous Driving Simulation`, 2026-02-06，https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation，成熟度：2026 产业前沿，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/World_Model_不等于视频生成.md`

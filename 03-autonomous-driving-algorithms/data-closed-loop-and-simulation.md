@@ -76,7 +76,3 @@ E2E 模型需要闭环评估，因为 open-loop 轨迹误差无法充分反映�
 - Caesar et al., `nuPlan: A closed-loop ML-based planning benchmark for autonomous vehicles`, CVPR ADP3 2022 / arXiv:2106.11810，成熟度：常用规划闭环基准，查证日期：2026-05-29。
 - Dauner et al., `NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking`, NeurIPS 2024 Datasets and Benchmarks / arXiv:2406.15349，成熟度：新兴 benchmark，查证日期：2026-05-29。
 - `ReSim: Reliable World Simulation for Autonomous Driving`, arXiv:2506.09981，https://doi.org/10.48550/arXiv.2506.09981，成熟度：2025 前沿研究，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/03_自动驾驶算法路线/数据闭环与仿真.md`

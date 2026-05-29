@@ -56,7 +56,3 @@ Diffusion 让 World Model 能表达多种未来，但也把 workload 从一次�
 - Rombach et al., `High-Resolution Image Synthesis with Latent Diffusion Models`, CVPR 2022，https://arxiv.org/abs/2112.10752，成熟度：latent diffusion 基础，查证日期：2026-05-29。
 - Chi et al., `Diffusion Policy`, RSS 2023 / arXiv:2303.04137，https://arxiv.org/abs/2303.04137，成熟度：机器人动作生成成熟研究，查证日期：2026-05-29。
 - NVIDIA, `Cosmos World Foundation Models`, 2025，https://www.nvidia.com/en-us/ai/cosmos/，成熟度：2025 physical AI world model 平台，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/Diffusion_for_World_Model.md`

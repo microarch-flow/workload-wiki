@@ -51,7 +51,3 @@ Latent World Model 用压缩状态预测未来，牺牲部分可解释性换取 
 - Hafner et al., `DreamerV3`, arXiv:2301.04104，https://arxiv.org/abs/2301.04104，成熟度：成熟 latent dynamics 路线，查证日期：2026-05-29。
 - Bardes et al., `V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning`, arXiv:2506.09985，https://arxiv.org/abs/2506.09985，成熟度：2025 前沿研究，查证日期：2026-05-29。
 - LeCun, `A Path Towards Autonomous Machine Intelligence`, 2022，https://openreview.net/forum?id=BZ5a1r-kVsf，成熟度：概念框架，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/Latent_World_Model.md`

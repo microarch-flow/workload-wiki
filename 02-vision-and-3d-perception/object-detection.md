@@ -46,7 +46,3 @@ YOLO/RetinaNet 这类 one-stage dense detector 通常在 FPN 的 P3/P4/P5 上做
 - Ren et al., `Faster R-CNN`, NeurIPS 2015, arXiv:1506.01497。
 - Redmon et al., `You Only Look Once`, CVPR 2016, arXiv:1506.02640。
 - Carion et al., `End-to-End Object Detection with Transformers`, ECCV 2020, arXiv:2005.12872。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/目标检测/目标检测总览.md`

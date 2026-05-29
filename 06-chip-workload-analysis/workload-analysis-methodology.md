@@ -148,5 +148,6 @@ Workload 分析的核心不是把算子列出来，而是把算法的数据流�
 
 ## 参考来源
 
-- `/mnt/e/workload-wiki/task.md`，本 wiki 重建任务说明，2026-05-29。
-- `/mnt/e/workload-wiki-old/06_芯片架构Workload分析/Workload分析方法论.md`，旧版方法论素材。
+- Williams et al., `Roofline: An Insightful Visual Performance Model for Multicore Architectures`, CACM 2009。成熟度：已落地，arithmetic intensity 与瓶颈判断的方法论基础。
+- Sze et al., `Efficient Processing of Deep Neural Networks: A Tutorial and Survey`, Proceedings of the IEEE 2017 / arXiv:1703.09039。成熟度：已落地，算法到硬件需求映射的经典综述。
+- 本 wiki [Workload Characterization Axes](workload-characterization-axes.md)，统一刻画维度的定义。

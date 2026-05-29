@@ -71,7 +71,3 @@ Neck 是把 backbone 的多层 feature map 变成任务可用表示的重组层�
 - Lin et al., `Feature Pyramid Networks for Object Detection`, CVPR 2017, arXiv:1612.03144。
 - Liu et al., `Path Aggregation Network for Instance Segmentation`, CVPR 2018, arXiv:1803.01534。
 - Tan et al., `EfficientDet: Scalable and Efficient Object Detection`, CVPR 2020, arXiv:1911.09070。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Neck/Neck总览.md`

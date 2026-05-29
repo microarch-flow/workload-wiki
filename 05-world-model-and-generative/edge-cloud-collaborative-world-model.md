@@ -46,7 +46,3 @@ World Model 的云端负责“扩展经验”，端侧负责“实时判断”�
 - Dauner et al., `NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking`, NeurIPS 2024 / arXiv:2406.15349，https://arxiv.org/abs/2406.15349，成熟度：新兴评测基准，查证日期：2026-05-29。
 - NVIDIA, `Cosmos World Foundation Models`, 2025，https://www.nvidia.com/en-us/ai/cosmos/，成熟度：云端 physical AI world model 平台，查证日期：2026-05-29。
 - Waymo, `The Waymo World Model`, 2026-02-06，https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation，成熟度：2026 云端仿真前沿，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/端云协同World_Model.md`

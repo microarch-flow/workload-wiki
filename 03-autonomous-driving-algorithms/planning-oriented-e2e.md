@@ -71,7 +71,3 @@ Planning-oriented E2E 的核心是让感知表征从服务检测指标，转向�
 - Jiang et al., `VAD: Vectorized Scene Representation for Efficient Autonomous Driving`, ICCV 2023 / arXiv:2303.12077，成熟度：研究成熟，查证日期：2026-05-29。
 - Caesar et al., `nuPlan: A closed-loop ML-based planning benchmark for autonomous vehicles`, CVPR ADP3 2022 / arXiv:2106.11810，成熟度：常用评测基准，查证日期：2026-05-29。
 - Dauner et al., `NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking`, NeurIPS 2024 Datasets and Benchmarks / arXiv:2406.15349，成熟度：新兴评测基准，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/03_自动驾驶算法路线/Planning-oriented_E2E.md`

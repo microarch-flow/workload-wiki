@@ -57,7 +57,3 @@ Occupancy 把场景表示从对象级和图像级推进到 3D 空间状态；它
 - Tian et al., `Occ3D: A Large-Scale 3D Occupancy Prediction Benchmark for Autonomous Driving`, NeurIPS 2023 Datasets and Benchmarks, arXiv:2304.14365。
 - Wang et al., `OpenOccupancy: A Large Scale Benchmark for Surrounding Semantic Occupancy Perception`, ICCV 2023, arXiv:2303.03991。
 - Zheng et al., `OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving`, ECCV 2024, arXiv:2311.16038。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/02_视觉与3D感知/Occupancy/Occupancy总览.md`

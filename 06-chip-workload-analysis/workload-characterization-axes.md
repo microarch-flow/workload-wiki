@@ -195,5 +195,5 @@ Workload characterization 的价值在于把“模型结构”变成“芯片约
 
 ## 参考来源
 
-- `/mnt/e/workload-wiki/task.md`，本 wiki 重建任务说明，2026-05-29。
-- `/mnt/e/workload-wiki-old/06_芯片架构Workload分析/Workload分析方法论.md`，旧版方法论素材。
+- Williams et al., `Roofline: An Insightful Visual Performance Model for Multicore Architectures`, CACM 2009。成熟度：已落地，计算密度/瓶颈维度的方法论来源。
+- 本 wiki [Workload Analysis Methodology](workload-analysis-methodology.md)，五步分析流程。

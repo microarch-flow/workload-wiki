@@ -2,7 +2,7 @@
 
 这份 wiki 用英文目录和文件名组织，但正文以中文为主；算法、模型、系统和硬件相关专有名词保留英文。
 
-当前状态：已完成英文目录骨架创建。旧中文 wiki 已备份到 `/mnt/e/workload-wiki-old/`。
+本 wiki 从 workload 视角组织：01-05 讲清算法的计算结构与设计动机，06 是绝对重心（把算法翻译成芯片架构 workload 画像，并连接 BUS/RAM/NOC/DMA/FAB/CIM/PCIE 七份硬件 wiki 与 archax），00 与 07 提供导航、术语、统一关系图、代表工作索引与全 workload 对比表。前沿方向（VLA、World Model、E2E 自动驾驶等）的内容经过联网查证，引用均带名称、年份与 arXiv 编号/会议。
 
 ## 写作原则
 

@@ -70,7 +70,3 @@ Contrastive Learning 是学习可迁移视觉表示的训练路线；它主要�
 - He et al., `Momentum Contrast for Unsupervised Visual Representation Learning`, CVPR 2020, arXiv:1911.05722。
 - Chen et al., `A Simple Framework for Contrastive Learning of Visual Representations`, ICML 2020, arXiv:2002.05709。
 - Caron et al., `Emerging Properties in Self-Supervised Vision Transformers`, ICCV 2021, arXiv:2104.14294。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Contrastive_Learning/Contrastive_Learning与视觉表示预训练.md`

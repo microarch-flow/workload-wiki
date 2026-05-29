@@ -55,7 +55,3 @@ Video World Model 提供最直观的未来模拟，但它把 workload 推向高�
 - OpenAI, `Video generation models as world simulators`, 2024，https://openai.com/index/video-generation-models-as-world-simulators/，成熟度：前沿系统展示，查证日期：2026-05-29。
 - Google DeepMind, `Genie 2: A large-scale foundation world model`, 2024，https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/，成熟度：交互式 world model 前沿，查证日期：2026-05-29。
 - Waymo, `The Waymo World Model`, 2026-02-06，https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation，成熟度：2026 产业仿真前沿，查证日期：2026-05-29。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/05_World_Model与生成式智能/Video_World_Model.md`

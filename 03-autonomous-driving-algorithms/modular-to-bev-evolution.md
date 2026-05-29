@@ -64,7 +64,3 @@ BEV 仍然是 2D ground-plane 表示，不完整表达高度、遮挡和 3D occu
 - Philion and Fidler, `Lift, Splat, Shoot`, ECCV 2020, arXiv:2008.05711。
 - Li et al., `BEVFormer`, ECCV 2022, arXiv:2203.17270。
 - Wei et al., `SurroundOcc`, ICCV 2023, arXiv:2303.09551。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/03_自动驾驶算法路线/从传统模块化到BEV.md`

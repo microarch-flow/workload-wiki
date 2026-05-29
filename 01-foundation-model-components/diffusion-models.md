@@ -74,7 +74,3 @@ Diffusion 把生成质量换成多步去噪计算；它的 workload 必须按单
 - Ho et al., `Denoising Diffusion Probabilistic Models`, NeurIPS 2020, arXiv:2006.11239。
 - Song et al., `Denoising Diffusion Implicit Models`, ICLR 2021, arXiv:2010.02502。
 - Rombach et al., `High-Resolution Image Synthesis with Latent Diffusion Models`, CVPR 2022, arXiv:2112.10752。
-
-## 旧版素材
-
-- `/mnt/e/workload-wiki-old/01_基础模型组件/Diffusion/Diffusion总览.md`
