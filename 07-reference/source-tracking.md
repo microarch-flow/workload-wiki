@@ -15,18 +15,18 @@
 | 年份 | 论文年份、官方发布时间或 arXiv 年份 |
 | 出处 | arXiv 编号、会议、官方博客或项目页 |
 | 成熟度 | 已验证落地、研究成熟、开源 baseline、论文阶段、产业前沿、概念框架 |
-| 查证日期 | 本轮统一使用 2026-05-29 |
+| 查证日期 | 首轮统一使用 2026-05-29；2026-06-07 增补的前沿条目使用 2026-06-07 |
 
 ## 本轮重点查证项
 
 | 方向 | 代表项 | 当前口径 |
 | --- | --- | --- |
-| AD VLM/VLA | DriveLM、DriveVLM、EMMA、AutoVLA | 研究和原型阶段，不能写成量产闭环 |
-| AD World Model | GAIA-1、GAIA-2、Drive-WM、Vista | 云端仿真和前沿研究为主 |
-| Robotics VLA | RT-2、OpenVLA、π0、π0.5、GR00T N1、SmolVLA | 从 VLA baseline 走向 action tokenizer 和 embodied generalist |
+| AD VLM/VLA | DriveLM、DriveVLM、EMMA、OpenDriveVLA、AutoVLA | 研究和原型阶段，不能写成量产闭环 |
+| AD World Model | GAIA-1、GAIA-2、Drive-WM、Vista、BEVWorld | 云端仿真和前沿研究为主 |
+| Robotics VLA | RT-2、OpenVLA、π0、π0.5、GR00T N1/N1.5、Figure Helix、SmolVLA | 从 VLA baseline 走向 action tokenizer 和 embodied generalist |
 | Action Tokenizer | FAST、SmolVLA、RT-2 action tokens | 2025 前沿，重点是 token 长度、精度和 latency |
-| Robot World Model | Diffusion Policy、FLARE | 发展中，实时闭环仍前沿 |
-| General World Model | Cosmos、Genie 2、V-JEPA 2 | 物理 AI / embodied planning 前沿 |
+| Robot World Model | Diffusion Policy、FLARE、V-JEPA 2 | 发展中，latent 隐式 world model 与实时闭环仍前沿 |
+| General World Model | Cosmos、Genie 2/3、Sora、V-JEPA 2 | 物理 AI / embodied planning 前沿 |
 | Simulation benchmark | nuPlan、NAVSIM、ReSim | 评测与闭环数据基础设施 |
 
 ## 逐项来源记录
@@ -55,6 +55,20 @@
 | nuPlan | 2022 | arXiv:2106.11810 | 闭环规划基准 | 2026-05-29 |
 | NAVSIM | 2024 | arXiv:2406.15349 / NeurIPS 2024 | 新兴仿真评测基准 | 2026-05-29 |
 | ReSim | 2025 | arXiv:2506.09981 | reliable world simulation 前沿研究 | 2026-05-29 |
+| OpenDriveVLA | 2025 | arXiv:2503.23463 / AAAI 2026 | AD 开源 VLA 前沿研究 | 2026-06-07 |
+| AD VLA 综述 | 2025 | arXiv:2512.16760 | 方向梳理综述 | 2026-06-07 |
+| Vista | 2024 | arXiv:2405.17398 / NeurIPS 2024 | action-conditioned 驾驶 world model 研究成熟 | 2026-06-07 |
+| BEVWorld | 2024 | arXiv:2407.05679 | scene-level BEV latent world simulator 研究原型 | 2026-06-07 |
+| GEM | 2025 | arXiv:2412.11198 / CVPR 2025 | 多模态 ego-vision world model 研究阶段 | 2026-06-07 |
+| Cosmos | 2025 | arXiv:2501.03575 / NVIDIA | physical AI world foundation model 开源平台 | 2026-06-07 |
+| Genie 3 | 2025 | Google DeepMind 官方系统 | 实时可交互世界生成 demo 前沿 | 2026-06-07 |
+| Sora | 2024 | OpenAI 官方技术报告 | 视频生成系统，非严格 world model | 2026-06-07 |
+| Waymo World Model | 2026 | 官方系统（无独立 arXiv） | 产业闭环仿真 | 2026-06-07 |
+| World Models | 2018 | arXiv:1803.10122 / NeurIPS 2018 | latent rollout 经典源头 | 2026-06-07 |
+| GR00T N1.5 | 2025 | NVIDIA 官方系统（无独立 arXiv） | humanoid VLA 产业研究原型迭代 | 2026-06-07 |
+| Figure Helix | 2025 | Figure 官方系统（无独立 arXiv） | humanoid dual-system VLA 产业系统 | 2026-06-07 |
+| Jamba | 2024 | arXiv:2403.19887 | hybrid Transformer-Mamba 已落地开源 | 2026-06-07 |
+| MLA / DeepSeek-V2 | 2024 | arXiv:2405.04434 | KV cache 结构性压缩已落地 | 2026-06-07 |
 
 ## 后续维护规则
 

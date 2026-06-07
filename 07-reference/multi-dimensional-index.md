@@ -19,6 +19,26 @@
 | VLA | [VLA Fundamentals](../04-robotics-and-vla/vla-fundamentals.md), [VLA Workload](../06-chip-workload-analysis/vla-workload.md) |
 | World Model | [World Model Fundamentals](../05-world-model-and-generative/world-model-fundamentals.md), [World Model Workload](../06-chip-workload-analysis/world-model-workload.md) |
 
+## 按算法概念
+
+这一节把 01-05 反复出现的关键机制做成可检索入口，方便从"概念"反查到展开页面和对应 workload 性格。
+
+| 概念 | 含义 / workload 性格 | 入口 |
+| --- | --- | --- |
+| selective scan / SSM / 状态递推 | 线性时间序列算子，stateful decode，省 KV cache | [Mamba and SSM](../01-foundation-model-components/mamba-and-ssm.md) |
+| hybrid（attention-SSM 混层） | 多数层 SSM 扛吞吐、少数层 attention 做精确检索（Jamba） | [Mamba and SSM](../01-foundation-model-components/mamba-and-ssm.md), [Attention and Transformer](../01-foundation-model-components/attention-and-transformer.md) |
+| GQA / MQA / MLA | KV cache 结构性压缩，缓解 decode 的 bandwidth-bound | [Attention Variants and Efficiency](../01-foundation-model-components/attention-variants-and-efficiency.md), [Transformer Workload](../06-chip-workload-analysis/transformer-workload.md) |
+| token 治理（merge / prune / 变长 packing） | 视觉 token 数作为一级可调旋钮（NaViT），动态 shape | [Vision Transformer Backbone](../01-foundation-model-components/vision-transformer-backbone.md) |
+| set prediction（NMS-free） | DETR 类 query 直接出集合，去掉后处理 | [Object Detection](../02-vision-and-3d-perception/object-detection.md) |
+| mask classification | Mask2Former 类统一分割范式 | [Semantic Segmentation](../02-vision-and-3d-perception/semantic-segmentation.md), [Instance Segmentation](../02-vision-and-3d-perception/instance-segmentation.md) |
+| view transform（LSS scatter vs BEVFormer gather） | BEV 投影的两种访存模式，决定 scatter-gather 取舍 | [BEV Perception](../02-vision-and-3d-perception/bev-perception.md), [BEV Workload](../06-chip-workload-analysis/bev-workload.md) |
+| covariate shift | behavior cloning 的分布漂移，闭环数据/扰动对治 | [Behavior Cloning E2E](../03-autonomous-driving-algorithms/behavior-cloning-e2e.md) |
+| dual-system 慢-快（System 2 / System 1） | VLM 慢思考 + action expert 快控制（DriveVLM、GR00T N1） | [VLM and VLA for Autonomous Driving](../03-autonomous-driving-algorithms/vlm-vla-for-ad.md), [VLA Fundamentals](../04-robotics-and-vla/vla-fundamentals.md) |
+| action tokenizer（FAST 的 DCT+BPE） | 频域压缩动作 token，缩短 decode 序列 | [Action Tokenizer](../04-robotics-and-vla/action-tokenizer.md) |
+| flow matching 连续动作 | 不走 token，一次出动作 chunk（π0、GR00T N1） | [Action Tokenizer](../04-robotics-and-vla/action-tokenizer.md), [VLA Fundamentals](../04-robotics-and-vla/vla-fundamentals.md) |
+| action chunking | 一次预测 H 步动作，摊薄推理频率 | [VLA Fundamentals](../04-robotics-and-vla/vla-fundamentals.md), [VLA Workload](../06-chip-workload-analysis/vla-workload.md) |
+| latent vs generative world model | latent 预测省像素解码 vs 像素生成（V-JEPA 2 vs Cosmos/GAIA） | [World Model Is Not Video Generation](../05-world-model-and-generative/world-model-is-not-video-generation.md), [Latent World Model](../05-world-model-and-generative/latent-world-model.md) |
+
 ## 按应用场景
 
 | 场景 | 入口 |

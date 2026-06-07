@@ -47,6 +47,8 @@ BUS 与 FAB 在系统层面决定多 NPU tile、CPU、安全岛、传感器接�
 
 archax 探索这些 workload 时，比 TOPS 更有价值的扫描变量是：SRAM 容量、DMA capability、NOC QoS、KV/BEV cache residency、scatter-gather 支持、低比特模式、candidate rollout 并发度，以及 CPU/NPU 同步路径数。这正是这份 workload wiki 与七份硬件 wiki 的接缝——前者告诉你 workload 会先撑爆哪类资源，后者告诉你那类资源该怎么设计。
 
+最后一条是关于时间的判断：算子集合不是冻结的。今天的加速器主要为两类算子优化——dense GEMM/Conv 和 full attention——但 01-05 的演进方向（[Mamba/SSM](../01-foundation-model-components/mamba-and-ssm.md) 的 selective scan、attention-SSM [hybrid 架构](../01-foundation-model-components/attention-and-transformer.md)、[MLA 式 KV 压缩](../01-foundation-model-components/attention-variants-and-efficiency.md)）正在引入第三类算子：状态递推（state recurrence）。它的访存（associative scan 像树形归约）和并行结构都与 GEMM 不同，无法用 GEMM 阵列凑。一颗只为今天的 GEMM+attention 设计的芯片，可能在 2-3 年内面对一个核心算子已经改变的 workload。所以 archax 的 Capability 轴应当提前把 selective scan / state recurrence 建模为一类一等算子，把"算子集合会演进"本身当成探索维度——这是这份 wiki 替架构探索提前做的功课。
+
 ## 一句话理解
 
 自动驾驶与机器人芯片的本质是承载一组性质相反的 workload 组合，架构成败取决于 dense compute、irregular access、stateful cache、bounded latency 四者的平衡，而 archax 的价值是把这个平衡变成可扫描、可比较的探索空间——而不是一个 TOPS 数字。

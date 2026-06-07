@@ -39,6 +39,7 @@
 | BEV view transform | 通常偏 memory/latency-bound | gather/scatter 和 sampling 破坏连续访问 |
 | Occupancy dense decode | 通常偏 capacity-bound | 3D/4D tensor 随空间分辨率和 horizon 放大 |
 | Diffusion / rollout | 通常偏 latency-bound 或 compute-bound | 多步循环把单步成本乘以 step count |
+| SSM / selective scan（Mamba、hybrid） | 通常偏 memory / scan-kernel-bound | 状态按序列递推，associative scan 的访存像树形归约而非规则矩阵分块；状态大小恒定、不随序列长度增长，是相对 KV cache 的根本省法 |
 
 06 文档需要避免只写“计算密集”。更好的写法是：这个 stage 的矩阵规模是否足够大，是否能形成高 MAC utilization，activation 和 weight 是否能在 SRAM 里复用，是否存在小矩阵、短序列或动态 shape 导致利用率下降。
 
@@ -149,7 +150,7 @@ compute 不是第一瓶颈，因为该 stage 的 MAC 量不一定最高。
 | DMA | 需要 2D/3D stride、scatter-gather、double buffering、descriptor chaining |
 | NOC | 需要 tile 间 multicast、reduction、shared state access、QoS |
 | Sparse support | 需要 sparse metadata decode、indexed load/store、负载均衡 |
-| Stateful execution | 需要 cache residency、state update、rollout loop、decode loop |
+| Stateful execution | 需要 cache residency、state update、rollout loop、decode loop、SSM/selective-scan 的状态递推 |
 | Quantized datapath | 需要 INT8/FP8/INT4 compute 和高精度 accumulation |
 | CIM suitability | 判断规则 GEMM/Conv 是否适合 CIM，以及访存/稀疏/动态 stage 为什么不适合 |
 | Runtime determinism | 需要 bounded latency、固定调度、减少 CPU/NPU sync |
@@ -163,7 +164,7 @@ compute 不是第一瓶颈，因为该 stage 的 MAC 量不一定最高。
 | Resource | 资源容量与吞吐 | MAC TOPS、SRAM MB、DRAM GB/s、DMA channel、NoC bandwidth |
 | Topology | 资源连接方式 | NPU tile mesh、shared SRAM、memory hierarchy、host-device boundary |
 | Interaction | 数据搬运和执行关系 | encoder -> BEV -> planner、KV cache update、candidate rollout loop |
-| Capability | 可支持的算子和执行模式 | Conv/GEMM/Attention、scatter-gather、sparse、quantization、stateful decode |
+| Capability | 可支持的算子和执行模式 | Conv/GEMM/Attention、scatter-gather、sparse、quantization、stateful decode、SSM/selective-scan state recurrence、hybrid attention-SSM |
 
 archax 建模时应把 workload 参数显式化。例如 Transformer 不是一个固定 workload，而是由 `sequence length`、`batch`、`hidden size`、`layer count`、`KV cache layout`、`prefill/decode ratio` 定义的一族 workload。BEV 不是一个固定 workload，而是由 `camera count`、`image resolution`、`feature scale`、`BEV grid`、`history window`、`sampling pattern` 定义的一族 workload。
 

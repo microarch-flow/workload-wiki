@@ -81,7 +81,7 @@ Transformer 推理是一个会在 prefill 和 decode 之间在 compute-bound 与
 | 瓶颈类型 | compute-bound | memory-bandwidth-bound；长上下文叠加 capacity-bound 与 latency-bound |
 | 对硬件的核心需求 | 高 TOPS、attention tiling、低比特 GEMM | 高 DRAM/HBM 带宽、KV cache 布局与压缩、低 batch 高效 decode |
 
-两阶段需求相反，催生了 prefill/decode 分离部署、推测解码（speculative decoding）、连续批处理（continuous batching）、KV cache 量化与分页（PagedAttention）等系统级方案——它们本质上都是在调和这两个工作点对硬件的矛盾需求。
+两阶段需求相反，催生了 prefill/decode 分离部署、推测解码（speculative decoding）、连续批处理（continuous batching）、KV cache 量化与分页（PagedAttention），以及从结构上压缩 KV cache 的 GQA/MQA（多 query head 共享一组 KV head）和 MLA（multi-head latent attention，把 KV 投到低维 latent 再缓存）等系统级方案——它们本质上都是在调和这两个工作点对硬件的矛盾需求。其中 GQA/MLA 把"KV 的有效比特数"从事后优化变成模型结构的一部分，是 decode 主导部署里和参数量同级的一级架构指标（见 [Attention Variants and Efficiency](../01-foundation-model-components/attention-variants-and-efficiency.md)）。
 
 ## 参考来源
 

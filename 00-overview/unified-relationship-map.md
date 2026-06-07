@@ -11,6 +11,8 @@
 
 四条线都建在 01 章那批基础组件上：CNN/ViT 做视觉编码，Transformer/Attention 做 token 交互与多模态融合，Diffusion 做生成与多模态分布建模，Mamba/SSM 做长序列压缩，自监督（对比学习、JEPA）提供表征底座。换句话说，自动驾驶感知、机器人 policy、视频生成、World Model rollout，底层算子高度重叠——都是 GEMM、attention、conv、迭代生成、状态递推的不同配比。这就是它们能共用一套 Workload Characterization 维度的根本原因。
 
+值得单独点出的是，这批共享算子正在演进：SSM/selective scan 的"状态递推"作为 dense-GEMM、full-attention 之外的第三类算子进入算子集合，hybrid（attention+SSM）混层把它带进主流长上下文模型。这意味着为今天纯 Transformer 优化的 NPU，可能在 2-3 年内面对一个核心算子已经改变的 workload——archax 的 Capability 轴应提前为"状态递推 / selective scan"预留原语。
+
 ## 四条线如何分化又如何交汇
 
 ```text
@@ -51,6 +53,16 @@
 ## World Model 的横向角色
 
 World Model 不是第五条独立赛道，而是连接其余三条的"想象未来"能力层：给自动驾驶当仿真器和安全评估器，给机器人当 latent dynamics 和规划引擎，借用 Diffusion/Transformer 的生成能力但追求可控状态预测而非像素逼真（见 [World Model Is Not Video Generation](../05-world-model-and-generative/world-model-is-not-video-generation.md)）。它的 workload 是一个 `候选 × 时域 × 单步` 的乘法，因此天然分裂为端侧轻量 latent rollout 和云端重型生成两端。
+
+## 横切四条线的三条主线
+
+除了"共享底座"，01-05 的深度分析还浮现出三条横切所有应用线、直接改写硬件需求的主线，它们比单条赛道更值得架构师记住。
+
+第一，**"统一 scene query + set prediction"正在取代专用 head + 手工后处理**。检测（DETR）、分割（Mask2Former 的 mask classification）、BEV/E2E（UniAD 把 object/map/planning query 挂同一套 scene token）正收敛到"一个共享 backbone + 一组 query + set prediction"。对硬件，这把 NMS、动态实例数这类需 CPU 介入的不规则后处理移出推理路径，减少 CPU/NPU 同步点、提升确定性——对 deterministic NPU 是利好；代价是要支持 query decoder 的 cross-attention（计算量小）。
+
+第二，**"带状态的迭代推理"是一条贯穿主线**：SSM/selective scan 的状态递推、Diffusion 的多步去噪、World Model 的 action-conditioned rollout、video 的流式状态，同属"state 常驻 + 逐步更新、单步轻但被迭代深度放大"的一类。它不是一次性 forward，而是 archax Interaction 轴上的迭代维度（horizon / step / candidate）。这也解释了为什么 latent rollout、Mamba 状态递推、diffusion 采样在硬件上提的是同一类需求——state cache 常驻 SRAM + 低延迟逐步更新。
+
+第三，**端/云分裂在多条线上同时出现且需求几乎相反**：VLA 的慢-快双系统（端侧大 VLM decode 流 + 高频 action 流并发）、World Model 的 latent 上端/生成式上云、自动驾驶的车端推理/云端数据闭环。一侧是延迟/功耗/确定性问题，另一侧是吞吐/容量/IO 问题，硬切一个模型只会两边都不合适——必须建模成两个独立共存的工作点（分别连 06 的 [Edge Inference Chip Requirements](../06-chip-workload-analysis/edge-inference-chip-requirements.md) 与 [Cloud Inference and Simulation Chip](../06-chip-workload-analysis/cloud-inference-and-simulation-chip.md)）。
 
 ## 一句话理解
 
