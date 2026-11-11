@@ -5,65 +5,47 @@
 
 ## 这页在回答什么问题
 
-这页把自动驾驶、机器人、大模型和 World Model 四条看似独立的线，画进一张统一关系图。它们之所以能放进同一份 wiki，是因为从 workload 视角看，它们共享同一批基础组件，只是组合方式和部署约束不同。看懂这张图，就知道为什么 06 能用一套维度统一刻画它们。
+这页说明基础组件、感知任务、场景表示、学习方法和应用系统之间的联系。它们不属于同一个分类层次，也不构成必须依次经过的演进阶段。
 
 ## 共享的底座
 
-四条线都建在 01 章那批基础组件上：CNN/ViT 做视觉编码，Transformer/Attention 做 token 交互与多模态融合，Diffusion 做生成与多模态分布建模，Mamba/SSM 做长序列压缩，自监督（对比学习、JEPA）提供表征底座。换句话说，自动驾驶感知、机器人 policy、视频生成、World Model rollout，底层算子高度重叠——都是 GEMM、attention、conv、迭代生成、状态递推的不同配比。这就是它们能共用一套 Workload Characterization 维度的根本原因。
+[01 基础组件](../01-foundation-model-components/README.md) 介绍 CNN、Transformer、Diffusion、SSM 和自监督学习等主题。具体系统可以选用其中一种或多种方法，也可以采用本仓库未覆盖的方法。
 
-值得单独点出的是，这批共享算子正在演进：SSM/selective scan 的"状态递推"作为 dense-GEMM、full-attention 之外的第三类算子进入算子集合，hybrid（attention+SSM）混层把它带进主流长上下文模型。这意味着为今天纯 Transformer 优化的 NPU，可能在 2-3 年内面对一个核心算子已经改变的 workload——archax 的 Capability 轴应提前为"状态递推 / selective scan"预留原语。
+组件可以跨任务复用，但相同组件的输入、模型规模、训练方式和部署条件可能不同。是否具有相似的工作负载，需要针对具体实现分析。
 
 ## 四条线如何分化又如何交汇
 
-```text
-                 基础组件 (01: CNN/ViT/Transformer/Diffusion/Mamba/SSL)
-                                |
-        +-----------------------+------------------------+
-        |                       |                        |
-   视觉与3D感知(02)         序列/生成建模              自监督表征
-   检测/分割/LiDAR          (Diffusion/SSM)           (Contrastive/JEPA)
-        |                       |                        |
-     BEV / Occupancy  <---------+                        |
-        |  (02->03 桥梁)                                  |
-        v                                                 v
-   自动驾驶(03)                                      World Model(05)
-   modular->BEV->E2E                                 latent/video/BEV/occ
-   ->VLM/VLA for AD                                  ->端云协同
-        |                                                 |
-        +------------------> 机器人 VLA(04) <-------------+
-                       vision-language-action
-                       action tokenizer / flow policy
-                                |
-                                v
-                  芯片 Workload 分析(06, 重心)
-        CNN / Transformer / BEV / Occupancy / E2E / VLA / World Model
-                                |
-                                v
-              七份硬件 wiki (BUS/RAM/NOC/DMA/FAB/CIM/PCIE) + archax
-```
+可以从几个相互交叉的维度理解 01–05：
 
-感知（02）产出 BEV/Occupancy，它既是视觉感知的终点，又是自动驾驶（03）的起点，所以 BEV 放在 02 末尾作桥梁。自动驾驶的 E2E 和机器人的 VLA（04）在结构上正在收敛——两者都从模块化走向"感知到动作"的端到端大模型，都引入 VLM/VLA 范式，差异主要在部署约束（车规、控制频率、安全壳）而非算法骨架（见 [Robotics vs Autonomous Driving](../04-robotics-and-vla/robotics-vs-autonomous-driving.md)）。World Model（05）则横跨两侧：既给自动驾驶做仿真和安全评估，又给机器人做 latent dynamics 和规划，还和视频生成共享 Diffusion 组件但目标不同。
+| 维度 | 示例 | 回答的问题 |
+| --- | --- | --- |
+| 任务 | 检测、分割、轨迹预测 | 需要解决什么问题？ |
+| 模型组件与方法 | CNN、Attention、Diffusion、SSM | 如何处理信息或生成结果？ |
+| 场景表示 | BEV、occupancy、latent 表示 | 场景或状态以什么形式表达？ |
+| 学习方法 | 行为克隆、自监督学习 | 从什么数据和目标中学习？ |
+| 系统组织 | 模块化、端到端 | 各功能如何连接、训练或优化？ |
+| 应用场景 | 自动驾驶、机器人 | 系统在什么环境中使用？ |
+
+这些维度可以组合。例如，一个自动驾驶系统可以使用 BEV 表示，并采用模块化或端到端组织；使用 BEV 本身不决定系统是否端到端。端到端系统也可能保留可识别的任务模块。[UniAD](https://arxiv.org/abs/2212.10156) 是一个以规划为目标组织多个驾驶任务的例子。
 
 ## 自动驾驶与机器人 VLA 的同与异
 
-相同：都需要多模态感知、时序状态、端到端 policy、闭环低延迟、端云数据闭环；底层 workload 都是 dense compute + irregular access + stateful cache + bounded latency 的组合。
+两者都可能使用多模态输入、时序信息和动作预测。但传感器、动作空间、反馈方式和评价目标随具体系统变化，不能只按应用名称判断算法结构或实时要求。
 
-不同：自动驾驶的输入以环视多相机+LiDAR 为主、输出是轨迹、安全要求达车规级、控制频率相对低；机器人 VLA 输入含本体状态和腕部相机、输出是高频连续控制动作、embodiment 多样、跨平台泛化是核心难题。这些差异落到芯片上，是 KV cache/BEV cache 的形态、action 输出的 decode 方式、以及 safety 路径设计的不同。
+自动驾驶与机器人之间的详细比较见 [Robotics vs Autonomous Driving](../04-robotics-and-vla/robotics-vs-autonomous-driving.md)。学习其中一个方向时，可以按需参考另一个方向，不要求先完整读完对方章节。
 
 ## World Model 的横向角色
 
-World Model 不是第五条独立赛道，而是连接其余三条的"想象未来"能力层：给自动驾驶当仿真器和安全评估器，给机器人当 latent dynamics 和规划引擎，借用 Diffusion/Transformer 的生成能力但追求可控状态预测而非像素逼真（见 [World Model Is Not Video Generation](../05-world-model-and-generative/world-model-is-not-video-generation.md)）。它的 workload 是一个 `候选 × 时域 × 单步` 的乘法，因此天然分裂为端侧轻量 latent rollout 和云端重型生成两端。
+World Model 关注对环境状态或观测随时间变化的建模。不同方案的表示、输入、输出和用途可能不同；部分方案以动作为条件，并用于规划或策略学习。
+
+World Model 可以结合自动驾驶或机器人问题阅读，也可以作为模型方法单独研究。[World Model Fundamentals](../05-world-model-and-generative/world-model-fundamentals.md) 介绍基本概念；[World Model Is Not Video Generation](../05-world-model-and-generative/world-model-is-not-video-generation.md) 讨论它与视频生成的联系和区别。两者可以交叉，不能只凭是否生成视频判断一个模型能否用于决策。
 
 ## 横切四条线的三条主线
 
-除了"共享底座"，01-05 的深度分析还浮现出三条横切所有应用线、直接改写硬件需求的主线，它们比单条赛道更值得架构师记住。
-
-第一，**"统一 scene query + set prediction"正在取代专用 head + 手工后处理**。检测（DETR）、分割（Mask2Former 的 mask classification）、BEV/E2E（UniAD 把 object/map/planning query 挂同一套 scene token）正收敛到"一个共享 backbone + 一组 query + set prediction"。对硬件，这把 NMS、动态实例数这类需 CPU 介入的不规则后处理移出推理路径，减少 CPU/NPU 同步点、提升确定性——对 deterministic NPU 是利好；代价是要支持 query decoder 的 cross-attention（计算量小）。
-
-第二，**"带状态的迭代推理"是一条贯穿主线**：SSM/selective scan 的状态递推、Diffusion 的多步去噪、World Model 的 action-conditioned rollout、video 的流式状态，同属"state 常驻 + 逐步更新、单步轻但被迭代深度放大"的一类。它不是一次性 forward，而是 archax Interaction 轴上的迭代维度（horizon / step / candidate）。这也解释了为什么 latent rollout、Mamba 状态递推、diffusion 采样在硬件上提的是同一类需求——state cache 常驻 SRAM + 低延迟逐步更新。
-
-第三，**端/云分裂在多条线上同时出现且需求几乎相反**：VLA 的慢-快双系统（端侧大 VLM decode 流 + 高频 action 流并发）、World Model 的 latent 上端/生成式上云、自动驾驶的车端推理/云端数据闭环。一侧是延迟/功耗/确定性问题，另一侧是吞吐/容量/IO 问题，硬切一个模型只会两边都不合适——必须建模成两个独立共存的工作点（分别连 06 的 [Edge Inference Chip Requirements](../06-chip-workload-analysis/edge-inference-chip-requirements.md) 与 [Cloud Inference and Simulation Chip](../06-chip-workload-analysis/cloud-inference-and-simulation-chip.md)）。
+- **表示与输出**：同一任务可以使用不同表示和输出接口。比较时需要说明坐标系、时间范围和输出含义。
+- **时间与学习**：时序建模、自监督学习和动作条件预测适用于不同问题。具体方法是否使用历史状态或动作，要看其模型定义。
+- **执行与部署**：如果需要分析芯片工作负载，应先确定算法、输入规模和实现，再结合目标硬件检查计算、数据访问和延迟。可按场景参考 [Edge Inference Chip Requirements](../06-chip-workload-analysis/edge-inference-chip-requirements.md) 与 [Cloud Inference and Simulation Chip](../06-chip-workload-analysis/cloud-inference-and-simulation-chip.md)。
 
 ## 一句话理解
 
-自动驾驶、机器人、大模型、World Model 不是四份并列内容，而是同一批基础组件在不同部署约束下的组合；这张图的终点都汇向 06，再接到七份硬件 wiki 和 archax。
+任务、组件、表示、学习方法和应用是可以交叉组合的维度；芯片工作负载分析是针对具体组合及其执行条件的延伸。

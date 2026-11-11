@@ -5,30 +5,32 @@
 
 ## 这页在回答什么问题
 
-这页写清这份 wiki 要回答的核心问题，以及"读完算成功"的标准。它不是泛泛的学习目标，而是架构探索时需要被回答的具体问题——每个问题都能映射到某一章。
+这页说明 wiki 希望帮助读者回答的算法问题，以及可以继续探索的芯片工作负载问题。具体阅读顺序见 [Wiki Roadmap](wiki-roadmap.md)。
 
 ## 这份 wiki 的根问题
 
-一句话：**作为 AI 加速器架构师，怎么把自动驾驶和机器人场景里的算法，翻译成 deterministic NPU 架构探索可以建模的 workload？**
+**一个算法要解决什么问题？它如何表示输入、执行计算并产生输出？它在什么条件下适用，又有哪些局限？**
 
-注意这不是"怎么成为算法专家"。学算法是手段，看出硬件需求是目的。一切深度都校准到这个目的：算法原理讲到能看出 workload 即可，不陷进训练技巧和损失函数推导。
+在此基础上，还可以追问：当输入规模、软件实现和目标硬件确定后，这个算法会形成什么工作负载？哪些资源需求和性能判断需要进一步测量或建模？
 
 ## 拆成可回答的子问题
 
-围绕根问题，这份 wiki 要让人能回答下面这些具体问题。
+**基础组件与模型。** Attention 如何组织信息交互？[Attention Variants and Efficiency](../01-foundation-model-components/attention-variants-and-efficiency.md) 中的方法改变了什么？[Mamba and SSM](../01-foundation-model-components/mamba-and-ssm.md) 如何使用状态建模序列？[Diffusion Models](../01-foundation-model-components/diffusion-models.md) 如何通过多步过程生成样本？
 
-算法计算结构层面：CNN 的不同卷积形态为什么数据复用差异巨大（[CNN Workload](../06-chip-workload-analysis/cnn-workload.md)）？Transformer 推理为什么必须拆成 prefill 和 decode 两个特征相反的阶段（[Transformer Workload](../06-chip-workload-analysis/transformer-workload.md)）？FlashAttention 的 online softmax 为什么把 attention 从访存问题拉回算力问题，KV cache 压缩（GQA/MQA/MLA）为什么从推理 trick 上升为模型结构（[Attention Variants and Efficiency](../01-foundation-model-components/attention-variants-and-efficiency.md)）？Mamba/SSM 的状态递推把长序列压力从 attention matrix 转移到了哪里，为什么它是 dense-GEMM 和 full-attention 之外的第三类算子、需要 archax 在 Capability 轴预留（[Mamba and SSM](../01-foundation-model-components/mamba-and-ssm.md)）？Diffusion 的成本为什么是单步乘以步数乘以候选数（[Diffusion Models](../01-foundation-model-components/diffusion-models.md)）？
+**感知任务与表示。** [Object Detection](../02-vision-and-3d-perception/object-detection.md) 和 [Instance Segmentation](../02-vision-and-3d-perception/instance-segmentation.md) 的输出和评估目标有什么不同？BEV 和 occupancy 如何表示场景？不同表示保留或舍弃了哪些信息？
 
-感知与系统层面：BEV 的瓶颈为什么从 backbone 算力转移到了 view transform 的不规则访存，LSS 的 forward scatter 和 BEVFormer 的 backward gather 各自的硬件代价是什么（[BEV Workload](../06-chip-workload-analysis/bev-workload.md)）？为什么检测/分割正从"专用 head + NMS/动态实例数"收敛到"统一 scene query + set prediction"，这对去掉 CPU/NPU 同步点意味着什么（[Object Detection](../02-vision-and-3d-perception/object-detection.md)、[Instance Segmentation](../02-vision-and-3d-perception/instance-segmentation.md)）？Occupancy 为什么是容量优先的 workload，dense 和 sparse 各自的硬件代价是什么（[Occupancy Workload](../06-chip-workload-analysis/occupancy-workload.md)）？端到端自动驾驶为什么成败在 worst-case 延迟和 CPU/NPU 同步而非峰值算力（[E2E Workload](../06-chip-workload-analysis/e2e-workload.md)）？
+**应用与评估。** 自动驾驶和机器人如何把感知、预测与动作关联起来？不同训练方法需要什么数据？离线指标和闭环评估分别能说明什么，不能说明什么？阅读具体方案时，应区分模型设计、实验条件和部署情况。
 
-前沿方向层面：VLA 为什么是大模型推理和高频实时控制的叠加，action 输出走自回归 token（含 FAST 频域压缩）还是 flow/diffusion chunk 对 workload 影响如何，慢-快双系统为什么要求一颗芯片并发承载两个相反工作点（[VLA Workload](../06-chip-workload-analysis/vla-workload.md)）？World Model 和视频生成的根本区别是什么，latent 预测式（上端）和生成式 video（上云）为什么是两套几乎相反的硬件需求（[World Model Workload](../06-chip-workload-analysis/world-model-workload.md)）？为什么 SSM 状态递推、diffusion 多步、world model rollout、video 流式状态可归为同一类"带状态的迭代推理"，它在 archax Interaction 轴上是哪个维度？这些 2024-2026 快速演化的方向，当前真实状态（已落地/论文/概念）到底是什么（[Source Tracking](../07-reference/source-tracking.md)）？
+**工作负载延伸。** 给定模型、输入规模和执行方式后，计算、数据访问和依赖关系如何变化？可以从 [CNN Workload](../06-chip-workload-analysis/cnn-workload.md)、[Transformer Workload](../06-chip-workload-analysis/transformer-workload.md)、[BEV Workload](../06-chip-workload-analysis/bev-workload.md) 和 [Occupancy Workload](../06-chip-workload-analysis/occupancy-workload.md) 入手，再按需阅读 [E2E Workload](../06-chip-workload-analysis/e2e-workload.md)、[VLA Workload](../06-chip-workload-analysis/vla-workload.md) 或 [World Model Workload](../06-chip-workload-analysis/world-model-workload.md)。
 
-硬件映射层面：端侧和云端的 workload 约束为什么几乎相反，分别该怎么设计（[Edge Inference Chip Requirements](../06-chip-workload-analysis/edge-inference-chip-requirements.md)、[Cloud Inference and Simulation Chip](../06-chip-workload-analysis/cloud-inference-and-simulation-chip.md)）？这些 workload 怎么落到 RAM/DMA/NOC/CIM/PCIE 和 archax 的 Resource/Topology/Interaction/Capability（[AD and Robotics Chip Architecture Summary](../06-chip-workload-analysis/ad-robotics-chip-architecture-summary.md)）？
+**硬件映射与来源。** 端侧和云侧的约束可能不同；应如何为具体场景设定延迟、吞吐、容量和功耗目标？可参考 [Edge Inference Chip Requirements](../06-chip-workload-analysis/edge-inference-chip-requirements.md)、[Cloud Inference and Simulation Chip](../06-chip-workload-analysis/cloud-inference-and-simulation-chip.md) 和 [AD and Robotics Chip Architecture Summary](../06-chip-workload-analysis/ad-robotics-chip-architecture-summary.md)。前沿工作的来源和成熟度记录见 [Source Tracking](../07-reference/source-tracking.md)。
 
 ## 成功标准
 
-读完这份 wiki 后，应该能对任意一个目标算法，不查资料就说出它的 workload 画像：计算密度、访存模式、并行性、数据复用、量化敏感度、第一/第二瓶颈、对硬件的核心需求；并且能说出它该映射到 NPU 架构的哪些扫描变量上（SRAM 容量、DMA 能力、NOC QoS、cache residency、低比特模式、candidate 并发度、CPU/NPU 同步路径等），而不是只报一个 TOPS 数字。
+对于选定的算法，读者能够说明问题、输入和输出、关键步骤、主要假设以及适用边界，并能找到代表工作和评估依据。没有充分信息时，应能指出需要查证的部分。
+
+如果继续做工作负载分析，读者应能列出输入规模、实现和目标硬件等前提，区分静态估算、架构模型和实测结果；不能仅凭算法名称认定性能瓶颈。
 
 ## 一句话理解
 
-这份 wiki 成功与否，看的是读完之后能不能把一个算法直接说成一组芯片约束和一组 archax 扫描变量。
+先理解算法如何解决问题，再按需要研究它在具体执行条件下形成的芯片工作负载。
