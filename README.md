@@ -1,5 +1,7 @@
 # Workload Wiki
 
+> 本系列的日常维护已迁至 [主 Wiki 的 `series/workload/`](https://github.com/microarch-flow/wiki/tree/main/series/workload)。公开阅读入口仍为 [算法与模型](https://microarch-flow.github.io/wiki/external/workload-wiki/)。本仓保留旧版内容和历史。
+
 这份 wiki 以 **AI 算法和模型**为主线，介绍它们要解决的问题、主要机制和应用方式。现有内容聚焦模型基础组件、视觉与 3D 感知、自动驾驶、机器人与 VLA，以及 World Model。
 
 读者可以先从算法入手，理解输入、输出、数据表示和计算过程。对芯片架构感兴趣的读者，可以继续分析特定算法在给定条件下形成的工作负载。算法阅读不要求先完成硬件分析。
